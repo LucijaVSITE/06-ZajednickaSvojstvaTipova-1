@@ -17,11 +17,28 @@ namespace Vsite.CSharp
         public double Realni;
         public double Imaginarni;
 
-        // TODO: Pregaziti (override) metodu ToString tako da vraća niz u obliku: "2+3j", "2-j", "0", "j", "-j".
-        //public override string ToString()
-        //{
-        //    return base.ToString();
-        //}
+        // Pregaziti (override) metodu ToString tako da vraća niz u obliku: "2+3j", "2-j", "0", "j", "-j".
+        public override string ToString()
+        {
+            if (Imaginarni==0) {
+                return string.Format("{0}", Realni);
+            }
+            if (Realni == 0 && Imaginarni == 1)
+            {
+                return string.Format("j");
+            }
+            if (Realni == 0 && (Imaginarni >= 0 || Imaginarni < -1)) {
+                return string.Format("{0}j", Imaginarni);
+            }
+            if (Realni == 0 && Imaginarni == -1)
+            {
+                return string.Format("-j");
+            }
+            if (Imaginarni < 0) {
+                return string.Format("{0}{1}j",Realni, Imaginarni);
+            }
+                return string.Format("{0}+{1}j",Realni, Imaginarni);
+        }
 
     }
 
