@@ -5,9 +5,14 @@ using System.Text;
 
 namespace Vsite.CSharp
 {
-    // TODO: Pokrenuti program i provjeriti ispis.
+    // Pokrenuti program i provjeriti ispis.
+    // Basa iznimku 
 
-    // TODO: Implementirati metodu GetHashCode u klasi Osoba iz projekta MetodaEqualsZaReferentiTip tako da se metoda Main može izvesti bez problema
+    //  Implementirati metodu GetHashCode u klasi Osoba iz projekta MetodaEqualsZaReferentiTip tako da se metoda Main može izvesti bez problema
+//Babina Greda
+//Jarce Polje
+//Vukova Gorica
+//GOTOVO!!!
 
     class Program
     {
