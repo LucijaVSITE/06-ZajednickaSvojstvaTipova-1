@@ -5,8 +5,8 @@ namespace Vsite.CSharp
 {
     public class MetodaEqualsZaVrijednosniTip
     {
-        // TODO: Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
-        public struct Osoba
+        // Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
+        public struct Osoba : IEquatable<Osoba>
         {
             public Osoba(string ime, int matičniBroj)
             {
@@ -17,17 +17,38 @@ namespace Vsite.CSharp
             string m_ime;
             int m_matičniBroj;
 
-            // TODO: Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim imenom i istim matičnim brojem rezultat bude true
+            // Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim imenom i istim matičnim brojem rezultat bude true
+            public bool Equals(Osoba other)
+            {
+                if (!base.Equals(other)) return false;
+                if (m_ime != other.m_ime) return false;
+                return object.Equals(m_matičniBroj, other.m_matičniBroj);
+            }
 
+            // Pregaziti (override) metodu Equals(object) tako da poziva Equals(Osoba)
+            public override bool Equals(object obj)
+            {
+                if (obj == null) return false;
+                if (GetType() != obj.GetType()) return false;
+                return Equals((Osoba)obj);
+            }
+            public static bool operator ==(Osoba a, Osoba b)
+            {
+                return Osoba.Equals(a, b);
+            }
 
-            // TODO: Pregaziti (override) metodu Equals(object) tako da poziva Equals(Osoba)
-
+            public static bool operator !=(Osoba a, Osoba b)
+            {
+                return !(a == b);
+            }
 
 
             public override string ToString()
             {
                 return string.Format("'{0}, {1}'", m_ime, m_matičniBroj);
             }
+
+            
         }
 
         public static void UsporedbaOsoba(Osoba osobaA, Osoba osobaB)
