@@ -8,9 +8,18 @@ namespace Vsite.CSharp
     {
         public static void Jednakost(Osoba osobaA, Osoba osobaB)
         {
-            // TODO: Otkomentirati donje naredbe i provjeriti može li se kod prevesti i izvesti.
-            //Console.WriteLine(string.Format("{0} == {1}: {2}", osobaA, osobaB, osobaA == osobaB));
-            //Console.WriteLine(string.Format("{0} != {1}: {2}", osobaA, osobaB, osobaA != osobaB));
+            // Otkomentirati donje naredbe i provjeriti može li se kod prevesti i izvesti.
+            Console.WriteLine(string.Format("{0} == {1}: {2}", osobaA, osobaB, osobaA == osobaB));
+            Console.WriteLine(string.Format("{0} != {1}: {2}", osobaA, osobaB, osobaA != osobaB));
+//'Janko, 1' == 'Janko, 1': True
+//'Janko, 1' != 'Janko, 1': False
+//'Janko, 1' == 'Janko, 1': True
+//'Janko, 1' != 'Janko, 1': False
+//'Janko, 1' == 'Darko, 2': False
+//'Janko, 1' != 'Darko, 2': True
+//'Janko, 1' == 'Janko, 2': False
+//'Janko, 1' != 'Janko, 2': True
+//GOTOVO!!!
 
             // TODO: Strukturi Osoba u projektu MetodaEqualsZaVrijednosniTip definirati operatore == i != tako da donji primjeri daju očekivane rezultate.
         }
